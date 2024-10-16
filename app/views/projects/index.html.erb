@@ -1,1 +1,14 @@
-<h1>Projects Index</h1>
+<h1>Projects Home</h1>
+<p>Various projects Ive done or are working on.</p>
+<p>These include physical projects, code projects, stl files, and more!</p>
+<div class="row">
+    <% @projects.each do |project| %>
+    <div class="col-3 card">
+        <%= image_tag(project.cover_image_url, alt: "#{project.name} image", class: "card-img-top") %>
+        <div class="card-body">
+            <h5 class="card-title"><%= project.name %></h5>
+            <%= link_to "Show", project, class: "btn-btn-primary">
+        </div>
+    </div>
+    <% end %>
+</div>
