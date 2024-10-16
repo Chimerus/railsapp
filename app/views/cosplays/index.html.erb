@@ -1,0 +1,12 @@
+<h1>Cosplay Central</h1>
+<p>Cosplay specific projects Ive done or am working on</p>
+<!-- Might add a current WIP section to be updated -->
+<% @cosplays.each do |cosplay| %>
+    <div class="col-3 card">
+        <%= image_tag(cosplay.cover_image_url, alt: "#{cosplay.name} image", class: "card-img-top") %>
+        <div class="card-body">
+            <h5 class="card-title"><%= cosplay.name %></h5>
+            <%= link_to "Show", cosplay, class: "btn-btn-primary">
+        </div>
+    </div>
+<% end %>
