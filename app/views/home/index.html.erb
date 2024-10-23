@@ -1,1 +1,10 @@
 <h1>Welcome to my page!</h1>
+<h2>My Projects</h2>
+<% @projects.each do |project| %>
+    <%= render partial: "_minicard", image_url: project.cover_image_url, item_name: project.name>
+<% end %>
+<hr/>
+<h2>Cosplay</h2>
+<% @cosplays.each do |cosplay| %>
+    <%= render partial: "_minicard", image_url: cosplay.cover_image_url, item_name: cosplay.name>
+<% end %>
