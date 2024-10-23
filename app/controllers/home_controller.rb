@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @cosplays = Cosplay.all
-    @projects = Project.all
+    @cosplays = Cosplay.featured
+    @projects = Project.featured
   end
 end
