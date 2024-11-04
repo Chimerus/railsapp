@@ -2,10 +2,10 @@
 <p>I'm a maker and I enjoy building projects on my free time, so I made a page to display them</p>
 <h2>Featured Projects</h2>
 <% @projects.each do |project| %>
-    <%= render partial: "_minicard", image_url: project.cover_image_url, item_name: project.name %>
+    <%= render partial: "layouts/minicard", locals: {image_url: project.cover_image_url, item_name: project.name} %>
 <% end %>
 <hr/>
 <h2>Featured Cosplay</h2>
 <% @cosplays.each do |cosplay| %>
-    <%= render partial: "_minicard", image_url: cosplay.cover_image_url, item_name: cosplay.name %>
+    <%= render partial: "layouts/minicard", locals: {image_url: cosplay.cover_image_url, item_name: cosplay.name} %>
 <% end %>
