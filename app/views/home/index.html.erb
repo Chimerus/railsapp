@@ -1,11 +1,23 @@
 <h1>Welcome to my page!</h1>
 <p>I'm a maker and I enjoy building projects on my free time, so I made a page to display them</p>
 <h2>Featured Projects</h2>
-<% @projects.each do |project| %>
-    <%= render partial: "layouts/minicard", locals: {image_url: project.cover_image_url, item_name: project.name} %>
-<% end %>
+<div class="row">
+    <% if @projects.any? %>
+        <% @projects.each do |project| %>
+            <%= render partial: "layouts/minicard", locals: {image_url: project.cover_image_url, item_name: project.name} %>
+        <% end %>
+    <% else %>
+        <p>Work In Progress</p>
+    <% end %>
+</div>
 <hr/>
 <h2>Featured Cosplay</h2>
-<% @cosplays.each do |cosplay| %>
-    <%= render partial: "layouts/minicard", locals: {image_url: cosplay.cover_image_url, item_name: cosplay.name} %>
-<% end %>
+<div class="row">
+    <% if @cosplays.any? %>
+        <% @cosplays.each do |cosplay| %>
+            <%= render partial: "layouts/minicard", locals: {image_url: cosplay.cover_image_url, item_name: cosplay.name} %>
+        <% end %>
+    <% else %>
+        <p>Work In Progress</p>
+    <% end %>
+</div>
