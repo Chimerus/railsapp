@@ -1,4 +1,23 @@
-<h1><%= @project.name %></h1>
+<div class="row">
+    <div class="col">
+        <h1><%= @project.name %></h1>
+    </div>
+</div>
 <%= image_tag(@project.cover_image_url, alt: "#{@project.name} image", class: "card-img-top") %>
-<p><%= @project.description %>
-<!-- add more text, images, mybe a link? -->
+<div class="row">
+    <div class="col">
+        <p><%= @project.description %>
+    </div>
+</div>
+<% if @project.link %>
+<div class="row">
+    <div class="col">
+        Project link: <a href=<%= @project.link%>>Link</a>
+    </div>
+</div>
+<% end %>
+<div class="row mt-4">
+    <div class="col">
+        <a href=<%= "/projects/#{@project.id}/edit" %> class="btn btn-primary">Edit</a>
+    </div>
+</div>
