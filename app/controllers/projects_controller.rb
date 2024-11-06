@@ -20,9 +20,22 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find_by(id: params[:id])
+  end
+
+  def update
+    @project = Project.find_by(id: params[:id])
+    if @project.update(project_params)
+      redirect_to @project
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def project_params
-    params.require(:project).permit(:name, :description, :cover_image_url, :featured)
+    params.require(:project).permit(:name, :description, :cover_image_url, :featured, :link)
   end
 end
