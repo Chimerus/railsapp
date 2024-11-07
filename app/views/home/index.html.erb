@@ -4,7 +4,7 @@
 <div class="row">
     <% if @projects.any? %>
         <% @projects.each do |project| %>
-            <%= render partial: "layouts/minicard", locals: {image_url: project.cover_image_url, item_name: project.name} %>
+            <%= render partial: "layouts/minicard", locals: {image_url: project.cover_image_url, item_name: project.name, show: "/projects/#{project.id}"} %>
         <% end %>
     <% else %>
         <p>Work In Progress</p>
