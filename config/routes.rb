@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :projects
-  resources :cosplay, only: [ :index, :show ]
+  resources :cosplays, only: [ :index, :show ]
   root to: "home#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
