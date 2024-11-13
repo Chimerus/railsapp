@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :cosplays, only: [ :index, :show ]
   root to: "home#index"
+  get "/character_builder" => "character_builder#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
