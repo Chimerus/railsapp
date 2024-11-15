@@ -1,1 +1,14 @@
 <h1>Character Builder</h1>
+
+<h2>Character Name: <input></input></h2>
+
+<h2>Character Race</h2>
+
+<h2>Attributes</h2>
+<div class="row d-inline-block">
+    <% ['Strength','Dexterity','Constitution','Wisdom','Intelligence','Charisma'].each do |attr| %>
+        <div class="col">
+        <h4><%= attr %>: <span id=<%= attr %>></span></h4>
+        </div>
+    <% end %>
+</div>
