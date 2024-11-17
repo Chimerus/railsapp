@@ -1,8 +1,23 @@
-<h1>Character Builder</h1>
+<% content_for :head do %>
+  <%= javascript_import_module_tag "character_generator" %>
+<% end %>
+<h1>Character Generator</h1>
+<hr>
+<p class="m-0">This will generate a random lvl 1 Character, following DnD 5e SRD</p>
+<p>Feats, spells, and equipment not included</p>
+<h2>Name: <input></input></h2>
 
-<h2>Character Name: <input></input></h2>
-
-<h2>Character Race</h2>
+<h2>Race</h2>
+<div class="dropdown">
+  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="racedrop" aria-haspopup="true" aria-expanded="false" id="racebutton">
+    Select Race
+  </button>
+  <div class="dropdown-menu" id="racedrop" aria-labelledby="racebutton">
+    <% ['Human','Dwarf','Elf','Halfling','Dragonborn','Gnome','HalfElf','HalfOrc','Tiefling'].each do |race| %>
+        <a class="dropdown-item race" id=<%= race %> href="#"><%= race %></a>
+    <% end %>
+  </div>
+</div>
 
 <h2>Attributes</h2>
 <div class="row d-inline-block">
@@ -12,3 +27,5 @@
         </div>
     <% end %>
 </div>
+
+<h2>Proficiency Bonus: +2</h2>
