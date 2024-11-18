@@ -14,7 +14,7 @@
   </button>
   <div class="dropdown-menu" id="racedrop" aria-labelledby="racebutton">
     <% ['Human','Dwarf','Elf','Halfling','Dragonborn','Gnome','HalfElf','HalfOrc','Tiefling'].each do |race| %>
-        <a class="dropdown-item race" id=<%= race %> href="#"><%= race %></a>
+        <a class="dropdown-item race" id=<%= race.downcase %> href="#"><%= race %></a>
     <% end %>
   </div>
 </div>
@@ -23,7 +23,7 @@
 <div class="row d-inline-block">
     <% ['Strength','Dexterity','Constitution','Wisdom','Intelligence','Charisma'].each do |attr| %>
         <div class="col">
-        <h4><%= attr %>: <span id=<%= attr %>></span></h4>
+        <h4><%= attr %>: <span id=<%= attr.downcase %>></span></h4>
         </div>
     <% end %>
 </div>
