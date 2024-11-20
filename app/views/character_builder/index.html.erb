@@ -8,16 +8,6 @@
 <h2 class="mb-2">Name: <input></input></h2>
 
 <h2 class="mb-2">Race:  <span id='race'></span></h2>
-<div class="dropdown">
-  <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="racedrop" aria-haspopup="true" aria-expanded="false" id="racebutton">
-    Select Race
-  </button>
-  <div class="dropdown-menu" id="racedrop" aria-labelledby="racebutton">
-    <% ['Human','Dwarf','Elf','Halfling','Dragonborn','Gnome','HalfElf','HalfOrc','Tiefling'].each do |race| %>
-        <a class="dropdown-item race" id=<%= race.downcase %> href="#"><%= race %></a>
-    <% end %>
-  </div>
-</div>
 
 <h2>Attributes:</h2>
 <div class="row d-inline-block mb-2">

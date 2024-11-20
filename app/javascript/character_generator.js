@@ -43,13 +43,6 @@ function setClass() {
     document.getElementById('cclass').textContent = cclass;
 }
 
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('race')) {
-        event.preventDefault();
-        document.getElementById('race').textContent = event.target.id;
-    }
- });
-
 setRace();
 setStats();
 setClass();
