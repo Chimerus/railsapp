@@ -5,10 +5,9 @@
 <hr>
 <p class="m-0">This will generate a random lvl 1 Character, following DnD 5e SRD</p>
 <p>Feats, spells, and equipment not included</p>
-<h2>Name: <input></input></h2>
-<br/>
+<h2 class="mb-2">Name: <input></input></h2>
 
-<h2>Race:  <span id='race'></span></h2>
+<h2 class="mb-2">Race:  <span id='race'></span></h2>
 <div class="dropdown">
   <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="racedrop" aria-haspopup="true" aria-expanded="false" id="racebutton">
     Select Race
@@ -19,14 +18,16 @@
     <% end %>
   </div>
 </div>
-<br/>
-<h2>Attributes</h2>
-<div class="row d-inline-block">
+
+<h2>Attributes:</h2>
+<div class="row d-inline-block mb-2">
     <% ['Strength','Dexterity','Constitution','Wisdom','Intelligence','Charisma'].each do |attr| %>
         <div class="col">
         <h4><%= attr %>: <span id=<%= attr.downcase %>></span></h4>
         </div>
     <% end %>
 </div>
+
+<h2>Class: <span id='cclass'></span></h2>
 
 <h2>Proficiency Bonus: +2</h2>

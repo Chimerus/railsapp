@@ -33,5 +33,15 @@ function setRace() {
     document.getElementById('race').textContent = race;
 }
 
+function randomClass() {
+    let classes = ['Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin','Ranger','Rogue','Sorcerer','Warlock','Wizard'];
+    return classes[Math.floor(Math.random()*classes.length)];
+}
+
+function setClass() {
+    let cclass = randomClass();
+    document.getElementById('cclass').textContent = cclass;
+}
 setRace();
 setStats();
+setClass();
