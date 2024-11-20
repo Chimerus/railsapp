@@ -15,7 +15,6 @@ function statArray() {
 
 function setStats(){
     let stat = statArray();
-    console.log(stat)
     document.getElementById('strength').textContent = stat[0];
     document.getElementById('dexterity').textContent = stat[1];
     document.getElementById('constitution').textContent = stat[2];
@@ -24,4 +23,15 @@ function setStats(){
     document.getElementById('charisma').textContent = stat[5];
 }
 
+function randomRace() {
+    let races = ['Human','Dwarf','Elf','Halfling','Dragonborn','Gnome','HalfElf','HalfOrc','Tiefling'];
+    return races[Math.floor(Math.random()*races.length)];
+}
+
+function setRace() {
+    let race  = randomRace();
+    document.getElementById('race').textContent = race;
+}
+
+setRace();
 setStats();
