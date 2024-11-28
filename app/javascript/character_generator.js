@@ -13,8 +13,27 @@ function statArray() {
     return array;
 }
 
-function setStats(){
-    let stat = statArray();
+function randomRace() {
+    let races = ['Human','Dwarf','Elf','Halfling','Dragonborn','Gnome','HalfElf','HalfOrc','Tiefling'];
+    return races[Math.floor(Math.random()*races.length)];
+}
+
+function randomClass() {
+    let classes = ['Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin','Ranger','Rogue','Sorcerer','Warlock','Wizard'];
+    return classes[Math.floor(Math.random()*classes.length)];
+}
+
+
+function setRace(race) {
+    document.getElementById('race').textContent = race;
+}
+
+function setClass(klass) {
+    document.getElementById('cclass').textContent = klass;
+}
+
+// stat should be an array of 6 numbers 3 - 18
+function setStats(stat){
     document.getElementById('strength').textContent = stat[0];
     document.getElementById('dexterity').textContent = stat[1];
     document.getElementById('constitution').textContent = stat[2];
@@ -23,26 +42,14 @@ function setStats(){
     document.getElementById('charisma').textContent = stat[5];
 }
 
-function randomRace() {
-    let races = ['Human','Dwarf','Elf','Halfling','Dragonborn','Gnome','HalfElf','HalfOrc','Tiefling'];
-    return races[Math.floor(Math.random()*races.length)];
+function rollCharacter() {
+    let race = randomRace();
+    let stats = statArray();
+    let klass = randomClass();
+
+    setRace(race);
+    setStats(stats);
+    setClass(klass);
 }
 
-function setRace() {
-    let race  = randomRace();
-    document.getElementById('race').textContent = race;
-}
-
-function randomClass() {
-    let classes = ['Barbarian','Bard','Cleric','Druid','Fighter','Monk','Paladin','Ranger','Rogue','Sorcerer','Warlock','Wizard'];
-    return classes[Math.floor(Math.random()*classes.length)];
-}
-
-function setClass() {
-    let cclass = randomClass();
-    document.getElementById('cclass').textContent = cclass;
-}
-
-setRace();
-setStats();
-setClass();
+rollCharacter();
