@@ -52,4 +52,10 @@ function rollCharacter() {
     setClass(klass);
 }
 
+document.addEventListener('click', function(event) {
+    if (event.target.id == 'reroll') {
+        rollCharacter();
+    }
+});
+
 rollCharacter();
