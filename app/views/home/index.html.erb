@@ -5,6 +5,7 @@
     <% if @projects.any? %>
         <% @projects.each do |project| %>
             <%= render partial: "layouts/minicard", locals: {image_url: project.cover_image_url, item_name: project.name, show: "/projects/#{project.id}"} %>
+            <%= render(Minicard.new(image_url: cosplay.cover_image_url, item_name: cosplay.name)) %>
         <% end %>
     <% else %>
         <p>Work In Progress</p>
@@ -15,7 +16,7 @@
 <div class="flex-row d-flex">
     <% if @cosplays.any? %>
         <% @cosplays.each do |cosplay| %>
-            <%= render partial: "layouts/minicard", locals: {image_url: cosplay.cover_image_url, item_name: cosplay.name} %>
+            <%= render(Minicard.new(image_url: cosplay.cover_image_url, item_name: cosplay.name)) %>
         <% end %>
     <% else %>
         <p>Work In Progress</p>
